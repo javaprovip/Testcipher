@@ -27,40 +27,40 @@ public class Solution {
 
         System.out.println("The original message is: " + message);
 
-        String encryptmessage = caesar.encryptmessage(key, message);
+        String encryptMessage = caesar.encryptMessage(key, message);
 
-        System.out.println("The encrypted message is: " + encryptmessage);
+        System.out.println("The encrypted message is: " + encryptMessage);
 
 
         //Ask the user if the encrypted message is to be decrypted
         System.out.println("Do you wish to decrypt this message?\n1.) Yes\n2.)No");
-        int decryptchoice = input.nextInt();
+        int decryptChoice = input.nextInt();
 
         //Consume the \n from nextInt
         input.nextLine();
 
 
-        if (decryptchoice == 1) {
+        if (decryptChoice == 1) {
 
             //Ask the user if there is a key
             System.out.println("Do you have the key? If yes, please enter the number. If no, please enter -1");
-            int decryptkey = input.nextInt();
+            int decryptKey = input.nextInt();
 
             //Consume the \n from nextInt
             input.nextLine();
 
 
-            if (decryptkey != -1) {
+            if (decryptKey != -1) {
 
-                String decryptmessage = caesar.decryptmessage(decryptkey, encryptmessage);
+                String decryptMessage = caesar.decryptMessage(decryptKey, encryptMessage);
 
-                System.out.println("The decrypted message is: " + decryptmessage);
+                System.out.println("The decrypted message is: " + decryptMessage);
             }
 
             //Since there is no key, use the brute force method
             else {
 
-                caesar.decryptbruteforce(encryptmessage);
+                caesar.decryptBruteforce(encryptMessage);
             }
         }
     }
